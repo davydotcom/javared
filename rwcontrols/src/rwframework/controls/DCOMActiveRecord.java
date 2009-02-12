@@ -119,7 +119,28 @@ public class DCOMActiveRecord {
     public ArrayList find_all(String Conditions, String Order) {
         return find_all(this.DataHandler, Conditions, Order);
     }
-
+    public ArrayList hasMany(DCOMActiveRecord subitem)
+    {
+        String idField = findHasManyName();
+        ArrayList results = subitem.find_all("idField = " + this.getValue("id"), null);
+        return results;
+        
+    }
+    public DCOMActiveRecord belongsTo(DCOMActiveRecord parentitem)
+    {
+        String idField = parentitem.TableName;
+        if(idField.endsWith("ies"))
+        {
+            idField = idField.substring(0,idField.length()-4) + "y";
+        }
+        else if (idField.endsWith("s"))
+        {
+            idField = idField.substring(0,idField.length() - 2);
+        }
+        idField = idField + "_id";
+        
+        return parentitem.find_by_id(this.DataHandler, this.getValue(idField));
+    }
     public ArrayList find_all(cDataHandler DataHandler, String Conditions, String Order) {
         String TableName;
         String ClassName = this.getClass().getSimpleName();
@@ -630,5 +651,19 @@ public class DCOMActiveRecord {
             DataHandler.ErrorHandler.GenerateSQLError(ex);
         }
         return false;
+    }
+    private String findHasManyName()
+    {
+        String ClassName = this.getClass().getSimpleName();
+        System.out.println("Finding Table Name");
+        for(int x=1;x<ClassName.length();x++)
+        {
+            if(ClassName.toCharArray()[x] >= (int)'A' && ClassName.toCharArray()[x] <= (int)'Z')
+            {
+                ClassName = ClassName.substring(0,x) + "_" + ClassName.substring(x);
+                x++;
+            }
+        }
+        return ClassName + "_id";
     }
 }

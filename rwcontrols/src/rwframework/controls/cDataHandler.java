@@ -30,35 +30,56 @@ public class cDataHandler {
     public String database;
     public String UserName;
     public String Password;
-    public String ToolbarImage = "/rwframework/images/blackbar.png";
     public Connection con = null;
     public boolean error;
     public cErrorHandler ErrorHandler;
+    private rwConnecting ConnectingDialog;
     public cDataHandler(cErrorHandler ErrorHandler) {
         error = false;
+        ConnectingDialog = new rwConnecting(null, false);
+        
         this.ErrorHandler = ErrorHandler;
     }
     
     public Connection GetConnection()
     {
+        int errorcount = 0;
+        while (errorcount < 5)
+        {
         try
         {       
         if(con == null)
         {
+            ConnectingDialog.setVisible(true);
             con = DriverManager.getConnection(GetConURL());
             return con;
         }
         if(con.isClosed() == true)
         {
+            ConnectingDialog.setVisible(true);
             System.out.println("Connection Was Reset: Reconnecting...");
             con = DriverManager.getConnection(GetConURL());
         }
+        con.createStatement();
+        ConnectingDialog.setVisible(false);
         return con;
         }
         catch(SQLException ex)
         {
+            
             ErrorHandler.GenerateSQLError(ex);
+            ConnectingDialog.setVisible(true);
+            try{
+            this.wait(10000);
+            }
+            catch(java.lang.InterruptedException ex2)
+            {
+                
+            }
+            errorcount++;
         }
+        }
+        ConnectingDialog.setVisible(false);
         return null;
         
     }
@@ -104,10 +125,6 @@ public class cDataHandler {
                 {
                   database = info.getText();
                   check++;
-                }
-                if(info.getName().compareTo("toolbar") == 0)
-                {
-                    ToolbarImage = info.getText();
                 }
             }
             if(check != 5)  //making seperate exceptions probably won't be needed
