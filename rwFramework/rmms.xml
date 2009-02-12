@@ -1,0 +1,51 @@
+
+<AppList>
+    <Menu shortcut=".I" id="1" name="Inventory Management" icon="/rwframework/images/icons/package.png">
+                <Menu shortcut=".IT" id="1" name="Inventory Transactions" icon="/rwframework/images/icons/money_dollar.png"/>
+                <Menu shortcut=".IMAINT" id="2" name="File Maintenance" icon="/rwframework/images/icons/package.png">
+                    <Menu shortcut=".IM" id="20" name="Inventory Master Maint." icon="/rwframework/images/icons/page_add.png" class="rmms.inventory.maintenance.frmInventoryMaster"/>
+                </Menu>
+                <Menu shortcut=".IMAINT" id="3" name="Miscellaneous Maintenance" icon="/rwframework/images/icons/package.png">
+                    <Menu shortcut=".IM" id="20" name="Location Description Maint." icon="/rwframework/images/icons/page_add.png" class="rmms.inventory.maintenance.frmInventoryMaster"/>
+                    <Menu shortcut=".IM" id="21" name="Product Category Maintenance" icon="/rwframework/images/icons/page_add.png" class="rmms.inventory.misc.frmProductCategory"/>
+                </Menu>
+    </Menu>
+    <Menu shortcut=".I" id="2" name="Bill of Materials" icon="/rwframework/images/icons/package.png"/>
+    <Menu shortcut=".I" id="3" name="Quotations" icon="/rwframework/images/icons/package.png"/>
+    <Menu shortcut=".I" id="4" name="Sales Orders" icon="/rwframework/images/icons/package.png"/>
+    <Menu shortcut=".AR" id="5" name="A/R Daily Work" icon="/rwframework/images/icons/money_add.png"/>
+    <Menu shortcut=".AR" id="6" name="A/R Customer &amp; Statement" icon="/rwframework/images/icons/money_add.png"/>
+    <Menu shortcut=".AR" id="7" name="Sales Anal. &amp; Commissions" icon="/rwframework/images/icons/money_add.png"/>
+    <Menu shortcut=".AR" id="8" name="Purchase Orders" icon="/rwframework/images/icons/money_add.png"/>
+    <Menu shortcut=".AP" id="9" name="Accounts Payable" icon="/rwframework/images/icons/money_delete.png"/>
+    <Menu shortcut=".GL" id="10" name="General Ledger" icon="/rwframework/images/icons/money_dollar.png">
+        <Menu shortcut=".GL" id="1" name="G/L Transactions" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="2" name="G/L Maintenance" icon="/rwframework/images/icons/money_dollar.png">
+            <Menu shortcut=".GL" id="20" name="G/L Chart of Accounts Maint." icon="/rwframework/images/icons/money_dollar.png" class="rwframework.controls.rwInternalFrame"/>
+            <Menu shortcut=".GL" id="21" name="G/L Balance Maintenance" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="22" name="G/L History Maintenance" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="23" name="G/L Recurring/Standard Maint." icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="24" name="G/L Allocation Maintenance" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="25" name="G/L Source Code Maintenance" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="26" name="G/L Period Description Maint." icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="27" name="G/L Fiscal Year Table Maint." icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="28" name="G/L Relink Accounts" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="29" name="G/L Copy Accounts" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="30" name="G/L Initialize Journal Period" icon="/rwframework/images/icons/money_dollar.png"/>
+            <Menu shortcut=".GL" id="31" name="G/L Create Templates" icon="/rwframework/images/icons/money_dollar.png"/>
+        </Menu>
+        <Menu shortcut=".GL" id="3" name="G/L Reporting" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="4" name="G/L Inquiries" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="5" name="G/L Management Reporting" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="6" name="G/L Budgeting" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="7" name="G/L Year End" icon="/rwframework/images/icons/money_dollar.png"/>
+        <Menu shortcut=".GL" id="8" name="G/L Conversion" icon="/rwframework/images/icons/money_dollar.png"/>
+    </Menu>
+    <Menu shortcut=".AR" id="11" name="Credit Tracking" icon="/rwframework/images/icons/money_add.png"/>
+    <Menu shortcut=".PR" id="12" name="Warranty System" icon="/rwframework/images/icons/page_add.png"/>
+    <Menu shortcut=".EQ" id="13" name="Ultimate Inquiry" icon="/rwframework/images/icons/car.png"/>
+    <Menu shortcut=".EQ" id="14" name="Advanced Inventory" icon="/rwframework/images/icons/car.png"/>
+    <Menu shortcut=".USER" id="15" name="User Maintenance" icon="/rwframework/images/icons/cup.png"  class="rwframework.frmusermaint"/>
+    <Menu shortcut=".BUG" id="16" name="Bug Report" icon="/rwframework/images/icons/bug.png"  class="rwframework.controls.rwBugReport"/>
+
+</AppList>

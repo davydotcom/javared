@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+  <hostname>localhost</hostname>
+  <UserName>root</UserName>
+  <Password />
+  <port>3306</port>
+  <database>rwcompanies</database>
+  <toolbar>/rwframework/images/bluebar.png</toolbar>
+</Config>
+
